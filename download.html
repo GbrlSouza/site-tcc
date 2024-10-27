@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Dengue</title>
+    <link rel="stylesheet" href="css_2.css"> <!-- CSS Consolidado -->
+</head>
+<body>
+    <div class="overlay" id="overlay"></div> <!-- Overlay Escuro -->
+    <div id="loader" class="loader"></div> <!-- Bolinha de Carregamento -->
+    <a href="Tela_Pincipal.html" class="back-button" onclick="showLoader(event)">&#8592;</a> 
+    <header>
+        <h1>Site Auxiliar para cuidado e precaução contra Aedes Aegypti</h1>
+    </header>
+    
+    <main>
+        <div class="download-container">
+            <h2>Download do Software</h2>
+            <a href="app.txt" class="download-button">Baixar</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p id="copyright">&copy; 2024 Contagem de larvas do aedes aegypti através de machine learning e site para auxílio</p>
+        <img src="imagens/logo_ms.png" alt="Ministério da Saúde" style="width: 400px; margin-top: 10px;">
+    </footer>
+
+    <script>
+        function showLoader(event) {
+            event.preventDefault(); // Impede o redirecionamento imediato
+            const loader = document.getElementById('loader');
+            const overlay = document.getElementById('overlay');
+
+            loader.style.display = 'block'; // Exibe a bolinha
+            overlay.style.display = 'block'; // Exibe o overlay
+
+            setTimeout(() => {
+                overlay.style.display = 'none'; // Oculta o overlay
+                loader.style.display = 'none'; // Oculta a bolinha
+                window.location.href = event.target.href; // Redireciona
+            }, 50); // Espera 1 segundo
+        }
+    </script>
+</body>
+</html>

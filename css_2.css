@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column; /* Alinha itens em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    height: calc(100vh - 140px); /* Ajusta a altura do main */
+}
+
+.about-us {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    text-align: center;
+    color: red;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+}
+
+.team-member {
+    text-align: center;
+    margin: 10px; /* Margem entre os membros */
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid red;
+}
+
+.team-member h3 {
+    margin-top: 10px;
+    font-weight: bold;
+    color: red;
+}
+
+.contact-form {
+    width: 100%; /* Largura total */
+    max-width: 400px; /* Largura máxima do formulário */
+    padding: 20px; /* Espaçamento interno */
+    border: 2px solid red; /* Borda vermelha */
+    border-radius: 15px; /* Bordas arredondadas */
+    background-color: white; /* Fundo branco */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px; /* Espaçamento entre os rótulos e os campos */
+    color: red; /* Cor do texto do rótulo */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.contact-form .submit-button {
+    background-color: red; /* Cor do botão */
+    color: white; /* Texto branco */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s;
+}
+
+.contact-form .submit-button:hover {
+    background-color: darkred; /* Cor ao passar o mouse */
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px; /* Centraliza verticalmente o texto */
+    font-size: 24px; /* Tamanho da seta */
+    text-decoration: none;
+    border: 2px solid red; /* Borda vermelha */
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #f0f0f0; /* Cor ao passar o mouse */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+#copyright {
+    color: var(--color-grey);
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+footer img {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estilos para o overlay escuro */
+.overlay {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+    z-index: 999; /* Certifica que fica acima de outros elementos */
+}
+
+.loader {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50px; /* Tamanho da bolinha */
+    height: 50px; /* Tamanho da bolinha */
+    border-radius: 50%; /* Forma circular */
+    background-color: white; /* Cor inicial */
+    animation: pulse 0.5s infinite; /* Animação pulsante */
+    transform: translate(-50%, -50%); /* Centraliza a bolinha */
+    z-index: 9999; /* Fica acima de outros elementos */
+}
+
+@keyframes pulse {
+    0% {
+        background-color: white;
+        transform: scale(1);
+    }
+    50% {
+        background-color: red;
+        transform: scale(1.1);
+    }
+    100% {
+        background-color: white;
+        transform: scale(1);
+    }
+}
+
+.download-container {
+    text-align: center; /* Centraliza o conteúdo */
+    margin-top: 20px; /* Espaço acima */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #f0f0f0; /* Cor de fundo cinza */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.download-button {
+    display: inline-block; /* Faz o link se comportar como um botão */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: red; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 25px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave */
+    font-weight: bold; /* Texto em negrito */
+}
+
+.download-button:hover {
+    background-color: darkred; /* Cor ao passar o mouse */
+}

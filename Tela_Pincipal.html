@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/geral.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/sintomas.css">
+    <link rel="stylesheet" href="styles/prevencao.css">
+    <script defer src="app.js"></script>
+    <title>Site Auxiliar para cuidado e precaução contra Aedes Aegypti</title>
+</head>
+<body>
+   <header>
+    <img src="imagens/logo-sj.png" alt="Logo" class="logo">
+        <div class="menu">
+            <input type="checkbox" class="menu-faketrigger"/>
+            <div class="menu-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <br>
+            <ul>
+                <br>
+                <br>
+                <br>
+                <li><a href="zona-de-riscos.html" target="_blank" onclick="showLoader(event)">Zonas de Riscos</a></li> 
+                <li><a href="sobre-nos.html" target="_blank" onclick="showLoader(event)">Sobre nós</a></li> 
+                <li><a href="contato.html" target="_blank" onclick="showLoader(event)">Contato</a></li> 
+                <li><a href="download.html" target="_blank" onclick="showLoader(event)">Download</a></li> 
+            </ul>
+        </div>
+
+        <div class="navbar">
+            <br>
+            <br>
+            <br>
+            <ul class="nav_list">
+                <li class="nav-item active">
+                    <a href="#home" class="active">O que é?</a>
+                </li> 
+                <li class="nav-item">
+                    <a href="#menu" class="active">Sintomas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="active">Prevenção</a>
+                </li>
+            </ul>
+        </div>
+   </header>
+
+   <div id="loader" class="loader"></div> <!-- Bolinha de Carregamento -->
+   <div class="overlay" id="overlay"></div> <!-- Overlay Escuro -->
+
+   <main class="content" id="content">
+        <section id="home">
+            <div id="cta">
+                <h1 class="title">
+                    O que é
+                    <span>Aedes Aegypti</span>?
+                </h1>
+
+                <p class="description">
+                    O Aedes Aegypti é uma espécie de mosquito fêmea vetor de doenças infecciosas como dengue, Zika, Chikungunya e febre amarela.
+                </p>
+                <p class="description">
+                    Para identificação desse tipo de mosquito devemos olhar suas marcas brancas que fazem listras por seu tronco, na cabeça e nas pernas. Além de serem menores do que os mosquitos comuns. 
+                </p>
+            </div>
+            <br><br>
+            <div id="banner">
+                <img src="imagens/aedesAegypt.jpg" width="500" height="500">
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2 class="dish">Sintomas</h2>
+            <div class="dishes1">
+                <div class="sintomas">
+                    <h3 class="sint-title">Dor de cabeça</h3>
+                    <img src="imagens/dor-de-cabeça.jpg" class="img" alt="" width="200" height="200">
+                </div>
+                <div class="sintomas">
+                    <h3 class="sint-title">Dor no corpo</h3>
+                    <img src="imagens/dor-no-corpo.jpg" class="img" alt="" width="200" height="200">
+                </div>
+                <div class="sintomas">
+                    <h3 class="sint-title">Dores nas articulações</h3>
+                    <img src="imagens/dores-nas-articulações.jpg" class="img" alt="" width="200" height="200">
+                </div>
+            </div>
+            <br>
+            <div class="dishes2">
+                <div class="sintomas">
+                    <h3 class="sint-title">Manchas pelo corpo</h3>
+                    <img src="imagens/manchas-pelo-corpo.jpg" class="img" alt="" width="200" height="200">
+                </div>
+                <div class="sintomas">
+                    <h3 class="sint-title">Nauseas</h3>
+                    <img src="imagens/nauseas.jpg" class="img" alt="" width="200" height="200">
+                </div>
+                <div class="sintomas">
+                    <h3 class="sint-title">Febre</h3>
+                    <img src="imagens/febre.jpg" class="img" alt="" width="200" height="200">
+                </div>
+            </div>
+        </section>
+        <br><br>
+        <section id="testimonials">
+            <div id="testimonials_content">
+                <h2 class="section-title">
+                    Prevenção
+                    <br><br>
+                </h2>
+
+                <div id="feedbacks1">
+                    <div class="feedback">
+                        <img src="imagens/garrafa.jpg" class="feedback-avatar">
+                        <div class="feedbacks-content">
+                            <p class="prev">
+                                <br><br>
+                                Guarde garrafas sempre de cabeça para baixo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="imagens/latão.jpg" class="feedback-avatar">
+                        <div class="feedbacks-content">
+                            <p class="prev">
+                                <br><br>
+                                Lave semanalmente por dentro com escovas e sabão e tanque utilizados para armazenar água.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="feedbacks2">
+                    <div class="feedback">
+                        <img src="imagens/lixo.jpg" class="feedback-avatar">
+                        <div class="feedbacks-content">
+                            <p class="prev">
+                                <br><br>
+                                Coloque o lixo em sacos plásticos e mantenha a
+                                lixeira bem fechada. Não jogue lixos
+                                em terrenos baldios.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="imagens/tonéis.jpg" class="feedback-avatar">
+                        <div class="feedbacks-content">
+                            <p class="prev">
+                                <br><br>
+                                Mantenha bem tampados tonéis e barris d'água.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="feedbacks3">
+                    <div class="feedback">
+                        <img src="imagens/vaso.jpg" class="feedback-avatar">
+                        <div class="feedbacks-content">
+                            <p class="prev">
+                                <br><br>
+                                Se você tiver vasos de plantas aquáticas, troque
+                                a água e lave o vaso principalmente por dentro
+                                com escova com água e sabão.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="imagens/vasoTerra.jpg" class="feedback-avatar">
+                        <div class="feedbacks-content">
+                            <p class="prev">
+                                <br><br>
+                                Coloque areia até a borda nos pratinhos dos vasos
+                                de plantas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="feedbacks4">
+                    <div class="feedback">
+                        <img src="imagens/pneu.jpg" class="feedback-avatar">
+                        <div class="feedbacks-content">
+                            <p class="prev">
+                                <br><br>
+                                Guarde sem água no local ou entregue os pneus
+                                ao serviço de limpeza urbana.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+   </div>
+
+   <footer>
+        <img src="imagens/wave.png">
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2024 Contagem de larvas do aedes aegypti através de machine learning e site para auxílio
+            </span>
+        </div>
+   </footer>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('.nav_list a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Impede o comportamento padrão do link
+                const targetId = this.getAttribute('href'); // Obtém o ID do alvo
+
+                // Rola suavemente até a seção correspondente
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' // Faz o scroll parar no topo da seção
+                });
+            });
+        });
+    });
+
+    function showLoader(event) {
+        const loader = document.getElementById('loader');
+        const overlay = document.getElementById('overlay');
+        
+        loader.style.display = 'block';
+        overlay.style.display = 'block';
+        
+        setTimeout(() => {
+            overlay.style.display = 'none';
+            // Aqui você pode redirecionar para a página desejada
+            window.location.href = event.target.href;
+        }, 50);
+    }
+   </script>
+</body>
+</html>

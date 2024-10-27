@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Aedes Aegypti</title>
+    <link rel="stylesheet" href="css_2.css"> 
+</head>
+<body>
+    <a href="Tela_Pincipal.html" class="back-button" onclick="showLoader(event)">&#8592;</a>  
+    <header>
+        <h1>Contato</h1>
+        <p>Estamos aqui para ajudar! Preencha o formulário abaixo para entrar em contato conosco.</p>
+    </header>
+    
+    <main>
+        <form action="#" method="post" class="contact-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+    
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone">
+    
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required onblur="fetchAddress()">
+    
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required readonly>
+    
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required>
+    
+            <label for="complemento">Complemento:</label>
+            <input type="text" id="complemento" name="complemento">
+    
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required readonly>
+    
+            <label for="municipio">Município:</label>
+            <input type="text" id="municipio" name="municipio" required readonly>
+    
+            <button type="submit" class="submit-button">Enviar</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p id="copyright">&copy; 2024 Contagem de larvas do aedes aegypti através de machine learning e site para auxílio</p>
+        <img src="imagens/logo_ms.png" alt="Ministério da Saúde" style="width: 400px; margin-top: 10px;">
+    </footer>
+
+    <div id="loader" class="loader"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        function showLoader(event) {
+            event.preventDefault(); // Impede o redirecionamento imediato
+            const loader = document.getElementById('loader');
+            const overlay = document.getElementById('overlay');
+        
+            loader.style.display = 'block'; // Exibe a bolinha
+            overlay.style.display = 'block'; // Exibe o overlay
+        
+            setTimeout(() => {
+                overlay.style.display = 'none'; // Oculta o overlay
+                loader.style.display = 'none'; // Oculta a bolinha
+                window.location.href = event.target.href; // Redireciona
+            }, 50); // Espera 1 segundo
+        }
+    
+        function fetchAddress() {
+            const cep = document.getElementById('cep').value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            const enderecoInput = document.getElementById('endereco');
+            const cidadeInput = document.getElementById('cidade');
+            const municipioInput = document.getElementById('municipio');
+    
+            if (cep.length === 8) {
+                fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data.erro) {
+                            enderecoInput.value = data.logradouro; // Preenche o campo de endereço
+                            cidadeInput.value = data.localidade;   // Preenche a cidade
+                            municipioInput.value = data.uf;         // Preenche o município (estado)
+                        } else {
+                            alert('CEP não encontrado.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro ao buscar o endereço:', error);
+                        alert('Erro ao buscar o endereço. Tente novamente.');
+                    });
+            } else {
+                alert('CEP inválido. Deve conter 8 dígitos.');
+                document.getElementById('cep').value = ''; // Limpa o campo de CEP
+            }
+        }
+    </script>
+</body>
+</html>

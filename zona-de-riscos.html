@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zonas de Risco - Aedes Aegypti</title>
+    <link rel="stylesheet" href="css_2.css"> 
+</head>
+<body>
+  
+
+    <a href="Tela_Pincipal.html" class="back-button" onclick="showLoader(event)">&#8592;</a>  
+    
+    <header>
+        <h1>Zonas de Risco</h1>
+        <p>Identifique áreas com maior incidência de Aedes Aegypti e tome precauções.</p>
+    </header>
+    
+    <br>    
+    <br>    
+    <br>    
+    <br>    
+    <br>    
+   
+    <main>
+        <section>
+            <h2>Dados de Incidência</h2>
+            <p>Bairros de Campinas com mais casos de dengue a cada 100 mil habitantes</p>
+            <ul>
+                <li><strong>Jardim Eulina:</strong> 4.277 casos. </li>
+                <li><strong>Jardim Lisa:</strong> 3.644 casos. </li>
+                <li><strong>Jardim Santos Dumont:</strong> 3.329 casos.</li>
+                <li><strong>Jardim Santo Antônio:</strong> 2.621 casos.</li>
+                <li><strong>Jardim São Quirino:</strong> 2.604 casos.</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Mapa de Zonas de Risco</h2>
+            <p>Veja o mapa abaixo para visualizar as áreas com maior incidência de focos do mosquito:</p>
+            <img src="areas_de_risco.jpg"Mapa de Zonas de Risco em Campinas" style="width: 100%; max-width: 600px;">
+        </section>
+    </main>
+    <br>
+    <br>    
+    <br>    
+    <br>    
+
+    
+    <footer>
+        <p id="copyright">&copy; 2024 Contagem de larvas do aedes aegypti através de machine learning e site para auxílio</p>
+        <img src="imagens/logo_ms.png" alt="Ministério da Saúde" style="width: 400px; margin-top: 10px;">
+    </footer>
+
+    <div id="loader" class="loader"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        function showLoader(event) {
+            event.preventDefault(); // Impede o redirecionamento imediato
+            const loader = document.getElementById('loader');
+            const overlay = document.getElementById('overlay');
+        
+            loader.style.display = 'block'; // Exibe a bolinha
+            overlay.style.display = 'block'; // Exibe o overlay
+        
+            setTimeout(() => {
+                overlay.style.display = 'none'; // Oculta o overlay
+                loader.style.display = 'none'; // Oculta a bolinha
+                window.location.href = event.target.href; // Redireciona
+            }, 50); // Espera 1 segundo
+        }
+    </script>
+</body>
+</html>

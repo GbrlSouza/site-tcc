@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Aedes Aegypti</title>
+    <link rel="stylesheet" href="css_2.css"> 
+</head>
+<body>
+    <a href="Tela_Pincipal.html" class="back-button" onclick="showLoader(event)">&#8592;</a>  
+    <header>
+        <h1>Site Auxiliar para Cuidado e Precaução contra Aedes Aegypti</h1>
+    </header>
+    
+    <main>
+        <section class="about-us">
+            <h2>Sobre Nós</h2>
+            <p>Somos alunos do curso Técnico de Informática pelo CPDB (Centro Profissional Dom Bosco) da Escola Salesiana São José. Nosso projeto é uma iniciativa de Thiago H. Gonçalves Martins, Maria Luisa de Moraes Palma e Christian Matheus Gomes Toledo.</p>
+            <p>Nosso intuito é auxiliar na contagem de larvas de Aedes Aegypti, um processo que atualmente é realizado manualmente com o uso de microscópios através das ovitrampas. Achamos intrigante que, em uma era tão tecnológica, ainda dependemos de métodos tradicionais para esse trabalho. Por isso, buscamos integrar soluções tecnológicas que possam otimizar e tornar esse processo mais eficiente.</p>
+            <p>Estamos alinhados com o setor 3 da Agenda 2030, que busca promover a inovação e a tecnologia em prol do desenvolvimento sustentável e da saúde pública. Acreditamos que, através da tecnologia, podemos contribuir significativamente para o controle do mosquito transmissor da dengue e outras doenças.</p>
+        </section>
+        
+        <section class="team">
+            <div class="team-member">
+                <img src="imagens/thiago.jpg" alt="Thiago">
+                <h3>Thiago</h3>
+            </div>
+            <div class="team-member">
+                <img src="imagens/christian.jpg" alt="Christian">
+                <h3>Christian</h3>
+            </div>
+            <div class="team-member">
+                <img src="imagens/malu.jpg" alt="Malu">
+                <h3>Malu</h3>
+            </div>
+            <div class="team-member">
+                <img src="imagens/geraldo.jpg" alt="Geraldo">
+                <h3>Geraldo</h3>
+            </div>
+            <div class="team-member">
+                <img src="imagens/galesandro.jpg" alt="Galesandro">
+                <h3>Galesandro</h3>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p id="copyright">&copy; 2024 Contagem de larvas do aedes aegypti através de machine learning e site para auxílio</p>
+        <img src="imagens/logo_ms.png" alt="Ministério da Saúde" style="width: 400px; margin-top: 10px;">
+    </footer>
+
+    <div id="loader" class="loader"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+        function showLoader(event) {
+            event.preventDefault(); // Impede o redirecionamento imediato
+            const loader = document.getElementById('loader');
+            const overlay = document.getElementById('overlay');
+        
+            loader.style.display = 'block'; // Exibe a bolinha
+            overlay.style.display = 'block'; // Exibe o overlay
+        
+            setTimeout(() => {
+                overlay.style.display = 'none'; // Oculta o overlay
+                loader.style.display = 'none'; // Oculta a bolinha
+                window.location.href = event.target.href; // Redireciona
+            }, 50); // Espera 1 segundo
+        }
+    </script>
+</body>
+</html>
